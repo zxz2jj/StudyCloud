@@ -1,0 +1,125 @@
+\documentclass{article}
+
+\title{\LaTeX}
+\author{zz-sj}
+
+\usepackage{CJKutf8}
+
+
+\begin{document}
+\maketitle
+\begin{CJK}{UTF8}{gbsn}
+%\tableofcontents
+
+\section{基础概念}
+LaTex 的源码结构分为导言区和正文区。
+
+\subsection{导言区}
+导言区用于指定文章类型、设置文章title以及导入文章需要使用的包等。具体命令有：
+
+$\backslash$documentclass\{...\}用来指定文章类型，常用参数有article、book、report等
+
+$\backslash$title\{...\}设置标题内容，$\backslash$author\{...\}设置文章作者名称，$\backslash$date\{...\}设置文章时间。设置好后，需要在正文区调用$\backslash$maketitle来显示标题。
+
+$\backslash$usepackage\{...\}导入文章使用到的命令包。
+
+$\backslash$newcommand\{...\}定义新命令。
+
+\subsection{正文区}
+正文区用于书写文章内容，其基本结构为：
+
+$\backslash$begin\{document\}
+
+	\ \ \ \ \ \  \%正文内容
+
+$\backslash$end\{document\}
+
+正文中使用\$...\$括起来的内容显示为数学公式体，\$\$...\$\$为换行数学公式体。
+
+\% 可以用来注释单行内容。
+
+\section{字体设置}
+\subsection{字体族的设置（罗马字体、打印机字体等）}
+\ \ \ \  $\backslash$textrm\{...\}来设置字体族为罗马字体 \textrm{Roman Family}
+
+$\backslash$textsf\{...\}来设置字体族为无衬线字体 \textsf{Sans Serif Family}
+
+$\backslash$texttt\{...\}来设置字体族为打字机字体 \texttt{Typewriter Family}   \ \ 等等。
+
+也可以使用命令来声明从目前行开始，往后的文字的字体，使用\{...\}来限定命令的作用域，比如：
+
+\{$\backslash$rmfamily ...\}\{$\backslash$sffamily ...\}\{$\backslash$ttfamily ...\}等等。
+
+\subsection{字体系列的设置（粗细，宽度）}
+\ \ \ \ $\backslash$textmd\{...\}来设置字体系列为中等粗细 \textmd{Medium Series}
+
+$\backslash$textbf\{...\}来设置字体系列为粗体字体 \textbf{Boldface Series }
+  \ \ 等等。
+
+也可以使用命令来声明从目前行开始，往后的文字的系列，使用\{...\}来限定命令的作用域，比如：
+
+\{$\backslash$mdseries ...\}\{$\backslash$bfseries ...\} 等等。
+
+\subsection{字体形状的设置（直立、斜体、伪斜体、小型大写）}
+字体形状
+
+$\backslash$textup\{...\}来设置字体族为直立 \textup{Upright Shape}
+
+$\backslash$textit\{...\}来设置字体族为斜体 \textit{Italic Shape}
+
+$\backslash$textsl\{...\}来设置字体族为伪斜体 \textit{Slanted Shape}
+
+$\backslash$textsc\{...\}来设置字体族为小型大写 \textsc{Small Caps Shape}
+等等。
+
+也可以使用命令来声明从目前行开始，往后的文字的字体，使用\{...\}来限定命令的作用域，比如：
+
+\{$\backslash$upshape ...\}\{$\backslash$itshape ...\}\{$\backslash$slshape ...\}\{$\backslash$scshape ...\} 等等。
+\\
+字体大小
+
+\{$\backslash$tiny ...\}  {\tiny Hello}
+
+\{$\backslash$scriptsize ...\}  {\scriptsize Hello}
+
+\{$\backslash$footnotesize ...\}  {\footnotesize Hello}
+
+\{$\backslash$small ...\}  {\small Hello}
+
+\{$\backslash$normalsize ...\}  {\normalsize Hello}
+
+\{$\backslash$large ...\}  {\large Hello}
+
+\{$\backslash$Large ...\}  {\Large Hello}
+
+\{$\backslash$LARGE ...\}  {\LARGE Hello}
+s
+\{$\backslash$huge ...\}  {\huge Hello}
+
+\{$\backslash$Huge ...\}  {\Huge Hello}
+\\
+\section{文章的结构}
+\ \ \ $\backslash$section\{本小节名\}来将接下来的文字设置为一个小节，直到遇到下一个$\backslash$section\{...\}。在小节中，可以使用$\backslash$subsection\{子小节名\}来设置子小节，使用$\backslash$subsubsection\{子子小节名\}来设置子小节的子小节。
+
+$\backslash$$\backslash$命令会使得文字换行，但不会产生新的段落，所以换行后也不会产生缩进。
+
+$\backslash$paragraph 命令会产生新的段落，产生换行和缩进。
+
+$\backslash$tableofcontents命令产生文档目录。
+
+\section{文章的插图}
+导言区: $\backslash$usepackage\{graphicx\}
+
+\ \ \ \ \ \ \ $\backslash$graphicspath\{\{path1\}, \{path2\}\}
+\\
+语 法:  \ \ $\backslash$includegraphics[ options ] \{filename\}\\
+ 选项中的参数有：scale=0.3缩放因子 height=2cm固定值的图像高度 width固定值的图像宽度
+ angle旋转角度 
+ 
+ \section{表格的制作}
+
+		
+
+\end{CJK}
+
+\end{document}

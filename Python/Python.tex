@@ -1,0 +1,412 @@
+\documentclass{book}
+
+\title{Python}
+\author{zz}
+
+\usepackage{CJKutf8}
+
+
+\begin{document}
+\maketitle
+\pagestyle{empty}
+\begin{CJK}{UTF8}{gbsn}
+\tableofcontents
+\renewcommand\thesection{\arabic{section}} 
+
+\newpage
+\section{Python基础}
+
+
+%\subsubsection{逻辑操作}
+%\noindent$>$	\ \ \ 	大于
+%
+%\noindent$>=$	\ 	大于等于 
+%
+%\noindent$<$	\ \ \ 	小于
+%
+%\noindent$<=$	\ 	小于等于
+%
+%\noindent!=		\ \ \ 不等于
+%
+%\noindent in	\ \ \ \ 	判断特定的值是否已包含在列表中
+%
+%\noindent not in	判断特定的值是否未包含在列表中
+%\subsubsection{逻辑连接}
+%\noindent and		逻辑与，表达式全为真时整个表达式为真
+%
+%\noindent or	\ \ 	逻辑或，表达式任一个为真则为真
+
+
+\subsection{程序输入}
+input\_var = input("Please input something:")
+
+函数 input() 让程序暂停运行，等待用户输入一些文本。获取用户输入后，Python将其存储在一个变量中。函数 input() 接受一个参数：即要向用户显示的``提示''或者``说明''，让用户知道该怎么做。可以将参数先存储在变量中，然后将变量传递给 input()。
+
+使用函数 input() 时，Python将用户输入解读为``字符串''。因此输入整数、浮点数等时需要强制格式转换。
+
+\subsection{条件语句}
+
+\subsubsection{if语句}
+if  boolean\_exp :
+
+​	exp;
+
+​	if-elif-else结构依次检查每个测试条件，直到遇到通过了的条件，Python将执行紧跟在其后边的代码块，并跳过余下的代码块。else是一条包罗万象的语句，只要不满足任何 if 和 elif 的条件测试，其中的代码块就会被执行，这可能会引入无效甚至恶意的数据。如果知道最终要测试的条件，应考虑使用一个 elif 来代替 else 。这样你可以肯定仅当满足相应的条件时，你的代码才会被执行。
+
+在 if 语句中将列表名用在条件表达式中时，Python将在列表至少包含一个元素时返回True，并在列表为空时返回False。
+
+
+\subsection{循环语句}
+\subsubsection{for循环}
+for value in iterator：
+
+	use value do something
+	
+for循环可以遍历任何可迭代对象iterator中的所有元素。每次返回一个元素赋值给for关键字后的变量名value。
+\subsubsection{while循环}
+while boolean\_exp:
+
+	do something
+	
+while循环当布尔表达式为真时一直运行。
+
+在要求很多条件都满足时才继续运行的程序中，使用一个变量作为标志，用于判断整个程序是否处于活动状态是一个不错的做法。任何一个事件导致标志位False都将结束循环。
+\subsubsection{break}
+
+break语句跳出当前整个循环，不在继续执行余下的循环轮次。
+\subsubsection{continue}
+\ \ \ \ continue语句跳出当前循环轮次，回到循环的开头，判断循环条件后进行下一次循环。
+
+for循环是一种遍历列表的有效方式，但是for循环中不应该修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可以使用while循环。通过while循环同列表和字典结合使用，可以收集、存储并组织大量的输入。
+
+
+\subsection{Python注释}
+\subsection{Python关键字}
+\subsection{Python运算符}
+
+
+
+\section{String}
+
+
+\subsection{Python字符串}
+\ \ \ \ 字符串是 Python 中最常用的数据类型。我们可以使用引号('或")来创建字符串。
+Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用。Python 访问子字符串时，可以使用方括号来截取字符串中的字符或子字符串。
+
+Python使用加号（+）来拼接字符串。
+
+函数 str() 可以将非字符串的值转换为字符串。
+
+\subsection{Python转义字符}
+\begin{center}
+\begin{tabular}{|l|l|}
+	\hline 转义字符   					& 描述\\ 	
+	\hline $\backslash$(在行尾时) 		& 续行符\\
+	\hline $\backslash$$\backslash$		& 反斜杠符号\\
+	\hline $\backslash$$'$		        & 单引号\\
+	\hline $\backslash$$''$				& 双引号\\
+	\hline $\backslash$b					& 退格(Backspace)\\
+	\hline $\backslash$e					& 转义\\
+	\hline $\backslash$000				& 空\\	
+	\hline $\backslash$n					& 换行\\
+	\hline $\backslash$v					& 纵向制表符\\
+	\hline $\backslash$t					& 横向制表符\\
+	\hline $\backslash$r     			& 回车     \\
+	\hline $\backslash$f      			& 换页    \\
+	\hline
+\end{tabular}
+\end{center}
+
+\subsection{Python字符串运算符}
+下表实例变量 a 值为字符串 ``Hello"，b 变量值为 ``Python"
+\begin{center}
+\begin{tabular}{|l|l|l|}
+	\hline 操作符 & 描述 & 实例\\ 	
+	\hline + 	 & 字符串连接 &  $>>>$a + b   \ \ \ \ \ 'HelloPython' \\
+	\hline *	 & 重复输出字符串 & $>>>$a * 2 \ \ \ \ \ \  'HelloHello' \\
+	\hline [\ ]	 & 通过索引获取字符串中字符 & $>>>$a[1] \ \ \ \ \ \ \ \ 'e'\\
+	\hline [ : ] & 双引号 & $>>>$a[1:4] \ \ \ \ \ \ 'ell' \\
+	\hline in    & 如果字符串中包含给定的字符返回True & $>>>$'H' in a \ 															\ \ True\\
+	\hline not in& 如果字符串中不包含给定的字符返回True & $>>>$'H' not in a \ \ False\\
+	\hline r/R	 & 所有的字符串都是直接按照字面的意思来使用 & $>>>$print r'$\backslash$n'	 \ \ $\backslash$n	 \\	
+	\hline \% 	 & 格式字符串 &   \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Python三引号}
+Python 中三引号可以将复杂的字符串进行赋值。
+
+Python 三引号允许一个字符串跨多行，字符串中可以包含换行符、制表符以及其他特殊字符。
+
+三引号的语法是一对连续的单引号或者双引号（通常都是成对的用）。
+
+三引号让程序员从引号和特殊字符串的泥潭里面解脱出来，自始至终保持一小块字符串的格式是所谓的WYSIWYG（所见即所得）格式的。一个典型的用例是，当你需要一块HTML或者SQL时，这时当用三引号标记，使用传统的转义字符体系将十分费神。
+
+\subsection{字符串内建函数}
+\textbf{1. str.capitalize()} \newline
+功能：\par 返回一个当前整个字符串的第一个字母大写的版本，原字符串不变。\newline 
+参数：\par 无
+\newline
+
+\noindent \textbf{2. str.casefold()} \newline
+功能：\par 返回一个当前整个字符串的全小写的版本，原字符串不变。与str.lower()的区别为后者只能用于ASCII码字符串，前者可以用于多国语言。\newline
+参数：\par 无
+\newline
+
+\noindent \textbf{3. str.center(width[, fillchar])} \newline
+功能：\par 返回一个指定的宽度 width 使当前字符串居中的新字符串，fillchar 为填充的字符，默认为空格。如果 width 小于字符串宽度直接返回字符串，不会截断。fillchar 只能是单个字符，默认为空格。\newline
+参数：\par width --- 新字符串的宽度
+     \par fillchar --- 填充字符
+\newline
+
+\noindent \textbf{4. str.count(sub[, start[, end]])} \newline
+功能：\par 返回子字符串在字符串中出现的次数。方法用于统计字符串里某个字符出现的次数。可选参数为在字符串搜索的开始与结束位置。\newline
+参数：\par sub --- 搜索的子字符串
+  	 \par start --- 字符串开始搜索的位置。默认为第一个字符,索引值为0。
+  	 \par end --- 字符串结束搜索的位置。默认为字符串的最后一个位置。
+\newline
+
+\newpage       
+\noindent \textbf{5. str.encode(encoding='utf-8', errors='strict')} \newline
+功能：\par 返回编码后的字符串。该方法以 encoding 指定的编码格式编码字符串。errors
+参数可以指定不同的错误处理方案。\newline
+参数：\par encoding --- 要使用的编码，默认为"UTF-8"。
+     \par errors --- 设置不同错误的处理方案,默认为 'strict',意为编码错误引起一个UnicodeError。 其他可能的值有 'ignore', 'replace', 'xmlcharrefreplace', 'backslashreplace' 以及通过 codecs.register\_error() 注册的任何值。
+\newline
+ 
+\noindent \textbf{6. str.endswith(suffix[, start[, end]])} \newline
+功能：\par 返回一个bool值。方法用于判断字符串是否以指定后缀结尾，如果以指定后缀结尾返回True，否则返回 False。可选参数 "start" 与 "end" 为检索字符串的开始与结束位置。
+\newline
+参数：\par suffix --- 被匹配的字符串。该参数可以是一个字符串或者是几个字符串组成的元组。
+     \par start --- 字符串中的开始位置。
+     \par end --- 字符中结束位置。     
+\newline
+
+\noindent \textbf{7. str.expandtabs(tabsize=8)} \newline
+功能：\par 返回字符串中的 tab 符号('$\backslash$t')转为空格后生成的新字符串。方法把字符串中的 tab 符号('$\backslash$t')转为空格，tab 符号('$\backslash$t')默认的空       格数是 8。添加的空格数为一个制表符大小减去已有的字符个数。\newline
+参数：\par tabsize -- 指定转换字符串中的 tab 符号('$\backslash$t')转为空格的字符数。          
+\newline
+
+\noindent \textbf{8. str.find(sub[, start[, end]])} \newline
+功能：\par 返回包含的子字符串开始的索引值，如果不包含子字符串返回-1。\newline
+参数：\par sub -- 指定检索的字符串
+     \par start -- 开始的索引，默认为0。
+     \par end -- 结束的索引，默认为字符串的长度。
+\newline
+
+\noindent \textbf{9. str.format()} \newline
+功能：\par 字符串的格式化。详情见字符串格式化。\newline
+参数：\par 无。
+\newline
+
+\newpage
+\noindent \textbf{10. str.format\_map(mapping)} \newline
+功能：\par 字符串的格式化。详情见字符串格式化。\newline
+参数：\par mapping -- 格式化字符串需要的一个字典对象。
+\newline
+
+\noindent \textbf{11. str.index(sub, start=None, end=None)} \newline
+功能：\par 如果包含子字符串,则返回开始的索引值，否则抛出异常ValueError。(和find()类似，但是会抛出异常)。\newline
+参数：\par sub -- 指定检索的字符串。
+     \par start -- 开始的索引，默认为0。
+     \par end -- 结束的索引，默认为字符串的长度。
+\newline
+
+
+\noindent \textbf{12. str.isalnum()} \newline
+功能：\par 如果 string 至少有一个字符并且所有字符都是[字母或数字]则返回 True,否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{13. str.isalpha()} \newline
+功能：\par 如果字符串至少有一个字符并且所有字符都是字母则返回 True，否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{14. str.isdecimal()} \newline
+功能：\par 检查字符串是否只包含十进制字符。这种方法只存在于unicode对象。注意:定义一个十进制字符串，只需要在字符串前添加 'u' 前缀即可。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{15. str.isdigit()} \newline
+功能：\par 如果字符串只包含数字则返回 True 否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\newpage
+\noindent \textbf{16. str.isidentifier()} \newline
+功能：\par 如果字符串是有效的 Python 标识符返回 True，否则返回 False。可用来判断变量名是否合法。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{17. str.islower()} \newline
+功能：\par 如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{18. str.isnumeric()} \newline
+功能：\par 如果字符串中只包含数字字符，则返回 True，否则返回 False。这种方法是只针对unicode对象。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{19. str.isprintable()} \newline
+功能：\par 如果字符串中为空或者字符串中所有的字符都是可打印字符，则返回 True，否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{20. str.isspace()} \newline
+功能：\par 如果字符串中只包含空格，则返回 True，否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{21. str.istitle()} \newline
+功能：\par 如果字符串中所有的单词拼写首字母是否为大写，且其他字母为小写则返回 True，否则返回 False。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{22. str.isupper()} \newline
+功能：\par 如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False。\newline
+参数：无。\par 
+
+\noindent \textbf{23. str.join(iterable)} \newline
+功能：\par 用于将序列中的元素以指定的字符(str)连接生成一个新的字符串。\newline
+参数：\par iterable --- 要连接的元素序列。
+\newline
+
+\noindent \textbf{24. str.ljust(width, fillchar=None)} \newline
+功能：\par 返回一个原字符串左对齐,并使用空格填充至指定长度的新字符串。如果指定的长度小于原字符串的长度则返回原字符串。\newline
+参数：\par width --- 指定字符串长度。
+	 \par fillchar -- 填充字符，默认为空格。
+\newline
+
+\noindent \textbf{25. str.lower()} \newline
+功能：\par 返回将字符串中所有大写字符转换为小写后生成的字符串拷贝。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{26. str.lstrip(chars=None)} \newline
+功能：\par 返回截掉字符串左边的空格或指定字符后生成的新字符串。\newline
+参数：\par chars --指定截取的字符,默认为空格。
+\newline
+
+\noindent \textbf{27. str.maketrans(*args, **kwargs)} \newline
+功能：\par   功能：maketrans() 方法用于给 translate() 方法创建字符映射转换表。可以只接受一个参数，此时这个参数是个字典类型（暂不研究）。对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串，表示转换的目标。两个字符串的长度必须相同，为一一对应的关系。在Python3中可以有第三个参数，表示要删除的字符，也是字符串。一般 maketrans() 方法需要配合translate() 方法一起使用。\newline
+参数：\par intab -- 需要转换的字符组成的字符串。
+     \par outtab -- 转换的目标字符组成的字符串。
+     \par delchars -- 可选参数，表示要删除的字符组成的字符串。\newline
+示例: \par intab = "aeiou"
+     \par outtab = "12345"
+     \par deltab = "thw"
+ 	 \par trantab1 = str.maketrans(intab,outtab)  
+	 \par trantab2 = str.maketrans(intab,outtab,deltab)  
+	 \par test = "this is string example....wow!!!"
+	 \par print(test.translate(trantab1))
+	 \par print(test.translate(trantab2))
+     \par 输出：
+     \par th3s 3s str3ng 2x1mpl2....w4w!!!
+	 \par 3s 3s sr3ng 2x1mpl2....4!!!
+\newline
+
+\noindent \textbf{28. str.partition(sep)} \newline
+功能：\par 方法用来根据指定的分隔符将字符串进行分割。返回一个3元的元组，第一个为分隔符左边的子串，第二个为分隔符本身，第三个为分隔符右边的子串。\newline
+参数：\par sep --- 指定的分割符。
+\newline
+
+\noindent \textbf{29. str.replace(old, new, count=None)} \newline
+功能：\par 返回字符串中的 old（旧字符串）替换成 new(新字符串)后生成的新字符串，如果指定第三个参数count，则替换不超过count次。\newline
+参数：\par old --- 将被替换的子字符串。
+     \par new --- 新字符串，用于替换old子字符串。
+     \par count --- 可选字符串, 替换不超过 count 次。
+\newline
+
+\noindent \textbf{30. str.rfind(sub, start=None, end=None)} \newline
+功能：\par 返回字符串最后一次出现的位置(从右向左查询)如果没有匹配项则返回
+-1。\newline
+参数：\par str --- 查找的字符串。
+     \par start --- 开始查找位置，默认为首字符，下标为0。
+     \par end --- 结束查找位置，默认为字符串的长度。
+\newline
+
+\noindent \textbf{31. str.rindex(sub, start=None, end=None)} \newline
+功能：\par 返回字符串最后一次出现的位置(从右向左查询)，如果没有匹配项则抛出异常ValueError。\newline
+参数：\par str --- 查找的字符串。
+     \par start --- 开始查找位置，默认为首字符，下标为0。
+     \par end --- 结束查找位置，默认为字符串的长度。
+\newline
+
+\noindent \textbf{32、str.rjust(width, fillchar=None)} \newline
+功能：\par 返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。如果指定的长度小于字符串的长度则返回原字符串。\newline
+参数：\par width --- 指定填充指定字符后中字符串的总长度.
+	 \par fillchar --- 填充的字符，默认为空格。
+\newline
+
+\noindent \textbf{33、str.rpartition(sep)} \newline
+功能：\par 方法从右边开始查找，根据指定的分隔符将字符串进行分割。返回一个3元的元组，第一个为分隔符左边的子串，第二个为分隔符本身，第三个为分隔符右边的子串。\newline
+参数：\par sep --- 指定的分割符。
+\newline
+
+\noindent \textbf{34、str.rsplit(sep=None, maxsplit=-1)} \newline
+功能：\par 通过指定分隔符对字符串从右边开始进行切片，如果参数 num 有指定值，则分隔成为 num+1 个子字符串。返回分割后的字符串列表。\newline
+参数：\par sep --- 指定的分割符。
+     \par maxsplit --- 分割次数。
+\newline
+
+\noindent \textbf{35. str.rstrip(chars=None)} \newline
+功能：\par 返回截掉字符串右边的空格或指定字符后生成的新字符串。\newline
+参数：\par chars --- 指定截取的字符,默认为空格。
+\newline
+
+\noindent \textbf{36. str.split()} \newline
+功能：\par 通过指定分隔符对字符串从左边开始进行切片，如果参数 num 有指定值，则分隔成为 num+1 个子字符串。返回分割后的字符串列表。\newline
+参数：\par sep --- 指定的分割符。
+     \par maxsplit --- 分割次数。
+\newline
+
+\noindent \textbf{37. str.splitlines(keepends=None)} \newline
+功能：\par 按照行('$\backslash$r', '$\backslash$r$\backslash$n', '$\backslash$n')分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。\newline
+参数：\par keepends -- 在输出结果里是否保留换行符，默认为 False。
+\newline
+
+\noindent \textbf{38. str.startswith(prefix, start=None, end=None)} \newline
+功能：\par 方法用于检查字符串是否是以指定子字符串开头，如果是则返回 True，否则返回 False。如果参数 start 和 end 指定值，则在指定范围内检查。\newline
+参数：\par prefix -- 检测的字符串。
+	 \par start -- 可选参数用于设置字符串检测的起始位置。
+	 \par end -- 可选参数用于设置字符串检测的结束位置。
+\newline
+ 
+\noindent \textbf{39. str.strip(chars=None)} \newline
+功能：\par 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。\newline
+参数：\par chars -- 移除字符串头尾指定的字符序列。
+\newline
+
+\noindent \textbf{40. str.swapcase()} \newline
+功能：\par 方法用于对字符串的大小写字母进行转换。返回大小写字母转换后生成的新字符串。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{41. str.title()} \newline
+功能：\par 方法返回"标题化"的字符串,就是说所有单词都是以大写开始，其余字母均为小写。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{42. str.translate(table)} \newline
+功能：\par 方法根据参数table给出的表(包含 256 个字符)转换字符串的字符。\newline
+参数：\par table -- 翻译表，翻译表是通过maketrans方法转换而来。
+\newline
+
+\noindent \textbf{43. str.upper()} \newline
+功能：\par 方法将字符串中的小写字母转为大写字母。返回小写字母转为大写字母的字符串。\newline
+参数：\par 无。
+\newline
+
+\noindent \textbf{45. str.zfill(width)} \newline
+功能：\par 方法返回指定长度的字符串，原字符串右对齐，前面填充0。\newline
+参数：\par width --- 指定字符串的长度。
+\newline
+
+
+\end{CJK}
+
+\end{document}
