@@ -65,9 +65,10 @@ Python3 的六个标准数据类型中：
 
 #### if语句
 
-> if  boolean_exp :
->
-> ​	exp;
+```python
+if  boolean_exp :
+    exp;
+```
 
 ​	if-elif-else结构依次检查每个测试条件，直到遇到通过了的条件，Python将执行紧跟在其后边的代码块，并跳过余下的代码块。
 
@@ -75,31 +76,15 @@ Python3 的六个标准数据类型中：
 
 > ​	在 if 语句中将列表名用在条件表达式中时，Python将在列表至少包含一个元素时返回True，并在列表为空时返回False。
 
-
-
-### 4. 程序输入
-
-#### 函数input()
-
-函数 input() 让程序暂停运行，等待用户输入一些文本。获取用户输入后，Python将其存储在一个变量中。
-
-```
-input_var = input("Please input something:")
-```
-
-函数 input() 接受一个参数：即要向用户显示的**提示**或者**说明**，让用户知道该怎么做。可以将参数先存储在变量中，然后将变量传递给 input()。
-
-使用函数 input() 时，Python将用户输入解读为**字符串**。因此**输入整数、浮点数等时需要强制格式转换**。
-
-
-
-### 5. 循环
+### 4. 循环
 
 #### for循环
 
-```
+```python
 for value in iterator：
-	use value do something
+	 use value do something
+else:
+   do something
 ```
 
 for循环可以遍历任何可迭代对象中的所有元素。每次返回一个元素赋值给for关键字后的变量名value。
@@ -108,14 +93,25 @@ for循环可以遍历任何可迭代对象中的所有元素。每次返回一�
 
 #### while循环
 
-```
+```python
 while boolean_exp:
-	do something
+	 do something
 ```
 
 while循环当布尔表达式为真时一直运行。
 
 在要求很多条件都满足时才继续运行的程序中，使用一个变量作为**标志**，用于判断整个程序是否处于活动状态是一个不错的做法。任何一个事件导致标志位False都将结束循环。
+
+**while 循环使用 else 语句**
+
+在 while … else 在条件语句为 false 时执行 else 的语句块。
+
+```python
+while <expr>:
+    <statement(s)>
+else:
+    <additional_statement(s)>
+```
 
 #### break
 
@@ -126,4 +122,18 @@ break语句跳出当前整个循环，不在继续执行余下的循环轮次。
 continue语句跳出当前循环轮次，回到循环的开头，判断循环条件后进行下一次循环。
 
 <!--for循环是一种遍历列表的有效方式，但是for循环中不应该修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可以使用while循环。通过while循环同列表和字典结合使用，可以收集、存储并组织大量的输入。-->
+
+### 5. 程序输入
+
+#### 函数input()
+
+函数 input() 让程序暂停运行，等待用户输入一些文本。获取用户输入后，Python将其存储在一个变量中。
+
+```python
+input_var = input("Please input something:")
+```
+
+函数 input() 接受一个参数：即要向用户显示的**提示**或者**说明**，让用户知道该怎么做。可以将参数先存储在变量中，然后将变量传递给 input()。
+
+使用函数 input() 时，Python将用户输入解读为**字符串**。因此**输入整数、浮点数等时需要强制格式转换**。
 
